@@ -46,7 +46,11 @@ public class Runner : IDisposable
 
         while (!cancellationToken.IsCancellationRequested && _config != null)
         {
-            await Task.Delay(10000, cancellationToken);
+            try
+            {
+                await Task.Delay(10000, cancellationToken);
+            }
+            catch { }
         }
 
         _cancellationTokenSource.Cancel();

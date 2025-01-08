@@ -87,9 +87,18 @@ internal class BoxHandler : IBoxHandler, IDisposable
             return;
         var ct = (CancellationToken)obj;
 
+        try
+        {
+            ThreadAsyncLoop(ct).GetAwaiter().GetResult();
+        }
+        catch { }
+    }
+
+    private async Task ThreadAsyncLoop(CancellationToken cancellationToken = default)
+    {
         var watch = new Stopwatch();
 
-        while (!ct.IsCancellationRequested)
+        while (!cancellationToken.IsCancellationRequested)
         {
             watch.Start();
 
@@ -100,12 +109,12 @@ internal class BoxHandler : IBoxHandler, IDisposable
                 string.Join(", ", _oscHandlers.Select(x => x.Key)),
                 frame);
 
-            Task.WaitAll(_oscHandlers.Select(x => x.SendMessage(frame, ct)));
+            await Task.WhenAll(_oscHandlers.Select(x => x.SendMessage(frame, cancellationToken)));
 
             watch.Stop();
 
             var sleepTill = delay - (int)watch.ElapsedMilliseconds; // For debug
-            Thread.Sleep(sleepTill < 0 ? 0 : sleepTill);
+            await Task.Delay(sleepTill < 0 ? 0 : sleepTill, cancellationToken);
         }
     }
 

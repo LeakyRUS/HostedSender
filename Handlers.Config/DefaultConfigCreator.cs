@@ -24,7 +24,7 @@ internal class DefaultConfigCreator(ISerializerOptionProvider provider) : IDefau
     public async Task CreateIfNotExist(string filePath)
     {
         var afk = new AfkPatternHandlerSettings(30, "AFK\n");
-        var anim = new AnimationPatternHandlerSetting([new AnimationInfo("Test01", 1), new AnimationInfo("Test02", 2), new AnimationInfo("Test03", 1)]);
+        var anim = new AnimationPatternHandlerSetting([new AnimationInfo("( ͡◎ ͜ʖ ͡◎)", 1), new AnimationInfo("ಠ_ಠ", 2), new AnimationInfo(">_>", 1)]);
         var dt = new DateTimePatternHandlerSetting("t");
         var media = new MediaPatternHandlerSetting(true);
         var pid = new ProcessExecutionTimePatternHandlerSetting("vrchat");
