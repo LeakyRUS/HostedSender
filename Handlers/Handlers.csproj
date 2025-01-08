@@ -16,4 +16,12 @@
     <ProjectReference Include="..\Handlers.Abstractions\Handlers.Abstractions.csproj" />
   </ItemGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+
 </Project>
