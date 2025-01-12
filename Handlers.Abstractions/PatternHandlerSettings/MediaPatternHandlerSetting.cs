@@ -32,5 +32,5 @@ public record MediaPatternHandlerSetting(
 
     public string AuthorTitleFormat { get; } = AuthorTitleFormat ?? "{0}{1} - {2}";
 
-    public string TimeFormat { get; } = TimeFormat ?? "{0:mm\\:ss} - {1:mm\\:ss}";
+    public string TimeFormat { get; } = TimeFormat ?? "{0:mm\\:ss} - {1:mm\\:ss}\n";
 }
