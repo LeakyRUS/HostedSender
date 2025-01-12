@@ -15,11 +15,11 @@
 	</PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CoreOSC.2025.01.12" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Projects\CoreOsc\CoreOSC\CoreOSC.csproj" />
     <ProjectReference Include="..\Handlers.Abstractions\Handlers.Abstractions.csproj" />
   </ItemGroup>
 
