@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers.Json", "Handlers.J
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosted.Worker", "Hosted.Worker\Hosted.Worker.csproj", "{C8CF597D-40FD-492A-B70E-A3D5F3FCE7EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreOSC", "..\..\Projects\CoreOsc\CoreOSC\CoreOSC.csproj", "{EF4240BD-949B-48E5-AF84-2700EFD93176}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers.Box", "Handlers.Box\Handlers.Box.csproj", "{14B86EAA-5E6C-4985-89D9-6373ACE684D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers.Osc", "Handlers.Osc\Handlers.Osc.csproj", "{7CF4E61F-1B2C-43CD-BD33-26F4140D6A63}"
@@ -71,10 +69,6 @@ Global
 		{C8CF597D-40FD-492A-B70E-A3D5F3FCE7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8CF597D-40FD-492A-B70E-A3D5F3FCE7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8CF597D-40FD-492A-B70E-A3D5F3FCE7EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF4240BD-949B-48E5-AF84-2700EFD93176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF4240BD-949B-48E5-AF84-2700EFD93176}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF4240BD-949B-48E5-AF84-2700EFD93176}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF4240BD-949B-48E5-AF84-2700EFD93176}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14B86EAA-5E6C-4985-89D9-6373ACE684D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14B86EAA-5E6C-4985-89D9-6373ACE684D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14B86EAA-5E6C-4985-89D9-6373ACE684D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
