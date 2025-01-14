@@ -39,6 +39,7 @@ jobs:
         run: |
           [xml]$csproj = Get-Content -Path ./Hosted.Windows/Hosted.Windows.csproj
           $version = $csproj.Project.PropertyGroup.Version
+          Write-Output "Version: $version"
           $version | Set-Content version.txt
 
       - name: Compress the builds
@@ -62,6 +63,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: write
     steps:
       - name: Pull artifacts
         uses: actions/download-artifact@v4
