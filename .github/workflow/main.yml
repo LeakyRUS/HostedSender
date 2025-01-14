@@ -1,0 +1,52 @@
+name: "HostedSender build"
+on:
+  pull_requests:
+    branches: [ "master" ]
+  push:
+    branches:
+      - 'master'
+      - 'feature/ci-build'
+  workflow_call:
+    inputs:
+      osc_ver:
+        description: 'Version for CoreOSC'
+        default: '1.0.0'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Install custom CoreOSC library
+        run: dotnet add package CoreOSC -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json 
+
+      - name: Build
+        run: dotnet publish -c Release -p:PublishProfile=FolderProfile -o ./publish
+
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: hostedsender-build
+          path: "publish"
+
+#  publish:
+#    runs-on: ubuntu-latest
+#    needs: build
+#    steps:
+#      - name: Pull artifacts
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: hostedsender-build
+#
+#      - name: Create release
+#        uses: actions/
+#
