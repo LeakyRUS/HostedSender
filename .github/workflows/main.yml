@@ -1,6 +1,6 @@
 name: "HostedSender build"
 on:
-  pull_requests:
+  pull_request:
     branches: [ "master" ]
   push:
     branches:
