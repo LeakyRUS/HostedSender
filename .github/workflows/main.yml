@@ -55,7 +55,8 @@ jobs:
         with:
           name: hostedsender-build
           path: |
-            "*.zip"
+            "publish.zip"
+            "publishAutonomous.zip"
             "CHANGELOG.md"
             "version.txt"
 
