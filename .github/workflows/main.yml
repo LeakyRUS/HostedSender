@@ -55,10 +55,9 @@ jobs:
         with:
           name: hostedsender-build
           path: |
-            "publish.zip"
-            "publishAutonomous.zip"
-            "CHANGELOG.md"
-            "version.txt"
+            *.zip 
+            CHANGELOG.md
+            version.txt
 
   publish:
     runs-on: ubuntu-latest
