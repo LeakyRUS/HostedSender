@@ -6,13 +6,8 @@ on:
     branches:
       - 'master'
       - 'feature/ci-build'
-  workflow_call:
-    inputs:
-      release_name:
-        description: 'Release Name'
-        default: '1.0.0'
-        required: true
-        type: string
+    tags:
+      - '*.*.*'
 
 jobs:
   build:
@@ -77,7 +72,6 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          draft: true
           body_path: CHANGELOG.md
           name: "${{ env.VERSION }}"
           files: |
