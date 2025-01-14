@@ -30,7 +30,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Install custom CoreOSC library
-        run: cd Hosted.Windows; dotnet add package CoreOSC
+        run: cd Hosted.Windows; dotnet add package CoreOSC -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
 
       - name: Build
         run: cd Hosted.Windows; dotnet publish -c Release -p:PublishProfile=FolderProfile -o ../publish
