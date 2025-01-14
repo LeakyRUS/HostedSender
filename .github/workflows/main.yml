@@ -74,6 +74,8 @@ jobs:
         with:
           body_path: CHANGELOG.md
           name: "${{ env.VERSION }}"
+          tag_name: "${{ env.VERSION }}"
+          make_latest: true
           files: |
             publish.zip
             publishAutonomous.zip
