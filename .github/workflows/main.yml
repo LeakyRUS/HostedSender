@@ -27,10 +27,14 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Install custom CoreOSC library
-        run: dotnet add package CoreOSC -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json 
+        run: |
+          cd Hosted.Windows
+          dotnet add package CoreOSC -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json 
 
       - name: Build
-        run: dotnet publish -c Release -p:PublishProfile=FolderProfile -o ./publish
+        run: |
+          cd Hosted.Windows
+          dotnet publish -c Release -p:PublishProfile=FolderProfile -o ../publish
 
       - name: Publish artifacts
         uses: actions/upload-artifact@v4
